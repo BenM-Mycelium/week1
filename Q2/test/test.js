@@ -5,7 +5,9 @@ const { groth16 } = require("snarkjs");
 
 function unstringifyBigInts(o) {
     if ((typeof(o) == "string") && (/^[0-9]+$/.test(o) ))  {
+        //if o is a sting and passes some regex to check if its a string of digits
         return BigInt(o);
+        //then return 0 as a bigint type (cast it to bigint)
     } else if ((typeof(o) == "string") && (/^0x[0-9a-fA-F]+$/.test(o) ))  {
         return BigInt(o);
     } else if (Array.isArray(o)) {
